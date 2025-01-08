@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,6 +6,7 @@ body {
     color: #333;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -12,96 +14,137 @@ header {
     background-color: #005b96;
     color: white;
     padding: 15px 20px;
+    flex-wrap: wrap;
 }
 
-.logo img {
-    height: 60px;
-    width: 80px;
-    border-radius: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.3rem;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.logo-container {
     display: flex;
+    align-items: center;
 }
 
-nav ul li {
+.logo-image {
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
     margin: 0 15px;
 }
 
-nav ul li a {
+.nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Section */
 .main-section {
     text-align: center;
-    padding: 50px 20px;
-}
-
-.main-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #005b96;
+    padding: 30px 15px;
 }
 
 .search-bar {
-    margin-top: 20px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-bar input {
-    width: 60%;
+    width: 70%;
+    max-width: 400px;
     padding: 10px;
-    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #005b96;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Announcements Section */
 .announcements {
-    margin: 50px auto;
+    margin: 30px auto;
     width: 90%;
     max-width: 1200px;
 }
 
 .announcement-tile {
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     margin: 10px 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.announcement-tile h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #005b96;
-}
-
+/* Footer */
 footer {
     background-color: #003f63;
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
 footer .social-icons a {
     color: white;
     margin: 0 10px;
     text-decoration: none;
-    font-size: 1.1rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #005b96;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .search-bar input {
+        width: 80%;
+    }
+
+    .search-bar button {
+        padding: 8px 15px;
+    }
 }
